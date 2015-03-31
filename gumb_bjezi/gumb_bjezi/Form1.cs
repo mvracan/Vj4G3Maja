@@ -16,5 +16,16 @@ namespace gumb_bjezi
         {
             InitializeComponent();
         }
+
+        private void btnBjezi_MouseEnter(object sender, EventArgs e)
+        {
+            int x = btnBjezi.Location.X;
+            int y = btnBjezi.Location.Y;
+            Random i = new Random();
+
+            this.Controls.Remove(btnBjezi);
+            btnBjezi.Location = new System.Drawing.Point(x+i.Next(-50,50), y+i.Next(-50,50));
+            this.Controls.Add(btnBjezi);
+        }
     }
 }
